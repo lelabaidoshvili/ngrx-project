@@ -1,0 +1,20 @@
+
+<app-header></app-header>
+<hr>
+
+<button (click)="increment()">Increment</button>
+<button (click)="decrement()">Decrement</button>
+<button (click)="reset()">Reset</button>
+
+{{count$ | async}}
+
+<button (click)="getTodos()">Get Todos</button>
+<hr>
+
+<div *ngFor="let todo of todos$  | async" (click)="getTodo(todo.id)">
+{{todo.title}}
+</div>
+
+<pre>
+  {{todos$ | async |json}}
+</pre>
